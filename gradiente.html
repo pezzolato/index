@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+<title>Introdução ao gradiente</title>
+        <meta charset="UTF-8">
+
+        <script>
+function draw(){
+    var canvas = document.getElementById('meuCanvas');
+    if (canvas.getContext){
+        var cntxt = canvas.getContext('2d');
+
+        /** Criando os objetos gradientes **/
+        var grad = cntxt.createLinearGradient(0,0,200,0);
+        var gradinf = cntxt.createLinearGradient(0,0,200,0);
+        /var gradR = cntxt.createRadialGradient(200,100,95,395,100,100);/
+        var GradR = cntxt.createRadialGradient(300, 100, 15, 300, 100, 100);
+        var GradRinf = cntxt.createRadialGradient(300, 300, 15, 300, 300, 100);
+
+        /** Adicionando os color Stop de cada gradiente **/
+        grad.addColorStop(0,"Red");
+        grad.addColorStop(1,"rgb(0,0,255)");
+
+        gradInf.addColorStop(0, "rgb(120, 10, 10)");
+        gradinf.addColorStop(0.5, "rgb(10, 120, 10)");
+        gradInf.addColorStop(1, "rgb(10, 10, 120)");
+
+        gradR.addColorStop(0, "green");
+        gradR.addColorStop(1, "rgb(255,0,0)");
+
+        gradRinf.addColorStop(0, "#0000ff");
+        gradRinf.addColorStop(0.25, "#ffff00");
+        gradRinf.addColorStop(0.5, "#00ff00");
+        gradRinf.addColorStop(0.75, "#ff0000");
+        gradRinf.addColorStop(1, "#ffffff");
+
+        /** Quadrado Superior Esquerdo **/
+        cntxt.beginPath();
+        cntxt.fillstyle = grad;
+        cntxt.fillRect(5, 5, 195, 195);
+        cntxt.stroke ();
+        cntxt.closePath();
+        /** Olho inferior esquerdo **/
+        cntxt.beginPath();
+        cntxt.fillstyle = gradInf;
+        cntxt.moveTo(10, 300);
+        cntxt.quadraticCurveTo(150, 200, 190, 300);
+        cntxt.fill();
+        cntxt.stroke();
+        cntxt.beginPath();
+        cntxt.moveTo(10, 300);
+        cntxt.quadraticCurveTo(150, 400, 190, 300);
+        cntxt.fill();
+        cntxt.stroke();
+        cntxt.closePath();
+        
+        
+        /** Circulo Superior Direito **/
+        cntxt.beginPath();
+        cntxt.fillstyle = gradRinf;
+        cntxt.arc(300, 100, 97,0, Math.PI "2, true);
+        cntxt.fill();
+        cntxt.stroke();
+        cntxt.closePath();
+
+
+
+
+            
+        </script>
