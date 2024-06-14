@@ -1,52 +1,54 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<title>Exemplo de arcos 2</title>
-<meta charset="UTF-8">
-<!-- Incício do Script do Canvas -->
 <script>
-function draw(){
-var canvas = document.getElementById('meuCanvas');
-if (canvas.getContext){
-var cntxt = canvas.getContext('2d');
-//Corpo PacMan
-cntxt.beginPath();
-cntxt.fillStyle = "rgba(255, 255, 0, 0.7)";
-cntxt.moveTo(70, 205);
-cntxt.arc(70, 205, 50, 0.20*Math.PI, 1.8*Math.PI);
-cntxt.closePath();
-cntxt.stroke();
-cntxt.fill();
-//Olho PacMan
-cntxt.beginPath();
-cntxt.fillStyle = "rgb(0, 0, 0)";
-cntxt.arc(55, 180, 5, 0, 2*Math.PI);
-cntxt.fill();
-
-cntxt.beginPath();
-cntxt.fillStyle = "rgba(255, 255, 0, 0.7)";
-cntxt.moveTo(70, 205);
-cntxt.arc(70, 205, 50, 0.20*Math.PI, 1.8*Math.PI);
-cntxt.closePath();
-cntxt.stroke();
-cntxt.fill();
-//Olho PacMan
-cntxt.beginPath();
-cntxt.fillStyle = "rgb(0, 0, 0)";
-cntxt.arc(55, 180, 5, 0, 2*Math.PI);
-cntxt.fill();
-
-}
-}
-</script>
-<!-- Fim do Script do canvas-->
-
-</head>
-<body onload="draw();">
-<h1>Exemplos de arcos 2</h1>
-<div>
-<canvas id="meuCanvas" width="500" height="500" style="border:1px solid
-#000000; background-color: white;"></canvas>
-</div>
-</body>
-</html>
+    function draw(){
+    var canvas = document.getElementById('meuCanvas');
+    var cornerRadius = 5;
+    if (canvas.getContext){
+    var cntxt = canvas.getContext('2d');
+    cntxt.moveTo(170, 70);
+    cntxt.lineTo(182, 102);
+    cntxt.lineTo(210, 102);
+    cntxt.lineTo(187, 125);
+    cntxt.lineTo(205, 160);
+    cntxt.lineTo(170, 140);
+    cntxt.lineTo(135, 160);
+    cntxt.lineTo(153, 125);
+    cntxt.lineTo(125, 102);
+    cntxt.lineTo(158, 102);
+    cntxt.closePath();
+    cntxt.stroke();
+    var cntxt = canvas.getContext('2d');
+    cntxt.moveTo(170, 50);
+    cntxt.lineTo(190, 102);
+    cntxt.lineTo(235, 102);
+    cntxt.lineTo(200, 130);
+    cntxt.lineTo(225, 190);
+    cntxt.lineTo(175, 155);
+    cntxt.lineTo(120, 190);
+    cntxt.lineTo(145, 125);
+    cntxt.lineTo(105, 102);
+    cntxt.lineTo(145, 102);
+    cntxt.closePath();
+    cntxt.stroke();
+        var cntxt = canvas.getContext('2d');
+    cntxt.moveTo(170, 30);
+    cntxt.lineTo(190, 105);
+    cntxt.lineTo(250, 102);
+    cntxt.lineTo(210, 130);
+    cntxt.lineTo(245, 200);
+    cntxt.lineTo(175, 165);
+    cntxt.lineTo(110, 200);
+    cntxt.lineTo(140, 130);
+    cntxt.lineTo(95, 102);
+    cntxt.lineTo(145, 102);
+    cntxt.closePath();
+    cntxt.stroke();
+    }
+    }
+    </script>
+    <!-- Fim do Java Script -->
+    </head>
+    <body onload="draw();">
+    <canvas id="meuCanvas" width="800" height="600" style="border:1px solid
+    #000000;"></canvas>
+    </body>
+    </html>
