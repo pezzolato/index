@@ -9,33 +9,53 @@ function draw(){
 var canvas = document.getElementById('meuCanvas');
 if (canvas.getContext){
 var cntxt = canvas.getContext('2d');
+/Exemplo de desenho com arc/
+cntxt.beginPath();
+cntxt.fillStyle = "rgba(255, 0, 0, 1)";
+cntxt.arc(75, 75, 50, 0, Math.PI * 2, true);//Círculo exterior
+cntxt.fill();
+cntxt.moveTo(110, 75);
+cntxt.arc(75, 75, 35, 0, Math.PI, false);//Boca(sentido horário)
+cntxt.moveTo(65, 65);
+cntxt.arc(60, 65, 5, 0, Math.PI * 2, true);//Olho esquerdo
+cntxt.moveTo(95, 65);
+cntxt.arc(90, 65, 5, 0, Math.PI * 2, true);//Olho direito
+cntxt.stroke();
+cntxt.closePath();
+//Arco no sentido horário
+cntxt.beginPath();
+cntxt.arc(200, 75, 50, 0, Math.PI);
+cntxt.stroke();
+cntxt.closePath();
+//Arco no sentido anti-horário
+cntxt.beginPath();
+cntxt.arc(310, 75, 50, 0, Math.PI, true);
+cntxt.stroke();
+cntxt.closePath();
 //Corpo PacMan
 cntxt.beginPath();
-cntxt.fillStyle = "rgba(255, 255, 0, 0.7)";
+cntxt.fillStyle = "rgba(280, 255, 0, 0.7)";
 cntxt.moveTo(70, 205);
 cntxt.arc(70, 205, 50, 0.20*Math.PI, 1.8*Math.PI);
+cntxt.closePath();
+cntxt.stroke();
+cntxt.fill();
+    cntxt.beginPath();
+cntxt.fillStyle = "rgba(280, 255, 0, 0.7)";
+cntxt.moveTo(80, 205);
+cntxt.arc(190, 205, 50, 0.90*Math.PI, 2.9*Math.PI);
 cntxt.closePath();
 cntxt.stroke();
 cntxt.fill();
 //Olho PacMan
 cntxt.beginPath();
 cntxt.fillStyle = "rgb(0, 0, 0)";
-cntxt.arc(55, 180, 5, 0, 2*Math.PI);
+cntxt.arc(50, 180, 5, 0, 2*Math.PI);
 cntxt.fill();
-
-cntxt.beginPath();
-cntxt.fillStyle = "rgba(255, 255, 0, 0.7)";
-cntxt.moveTo(70, 205);
-cntxt.arc(70, 205, 50, 0.20*Math.PI, 1.8*Math.PI);
-cntxt.closePath();
-cntxt.stroke();
-cntxt.fill();
-//Olho PacMan
-cntxt.beginPath();
+    cntxt.beginPath();
 cntxt.fillStyle = "rgb(0, 0, 0)";
-cntxt.arc(55, 180, 5, 0, 2*Math.PI);
+cntxt.arc(190, 180, 5, 0, 2*Math.PI);
 cntxt.fill();
-
 }
 }
 </script>
